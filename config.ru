@@ -1,3 +1,3 @@
-require './blog_app'
+require './app'
 
-run BlogApp.app
+run RodaShopApp.freeze.app
