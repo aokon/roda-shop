@@ -7,8 +7,9 @@ gem 'slim'
 gem 'puma'
 gem 'activesupport'
 gem 'sqlite3'
-gem 'rom', git: 'https://github.com/rom-rb/rom.git'
-gem 'rom-sql', git: 'https://github.com/rom-rb/rom-sql.git'
+gem 'rom', github: 'rom-rb/rom'
+gem 'rom-sql', github: 'rom-rb/rom-sql'
+gem 'virtus'
 
 group :development, :test do
   gem 'rspec'

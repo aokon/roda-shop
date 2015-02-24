@@ -1,14 +1,15 @@
 setup = ROM.setup(:sql, "sqlite::memory")
 
-setup.default.connection.create_table(:blogs) do
+setup.default.connection.create_table(:products) do
   primary_key :id
-  String :title
+  String :name
+  String :description
+  Float  :price
+  Boolean :active
 end
 
-Dir["#{ROOT_PATH}/relations/*.rb"].each { |f| require(f) }
-Dir["#{ROOT_PATH}/models/*.rb"].each { |f| require(f) }
-Dir["#{ROOT_PATH}/mappers/*.rb"].each { |f| require(f) }
-Dir["#{ROOT_PATH}/commands/*.rb"].each { |f| require(f) }
-Dir["#{ROOT_PATH}/params/*.rb"].each { |f| require(f) }
+%w(relations models mappers commands).each do |item|
+  Dir[File.join(ROOT_PATH, item, '**', '*.rb')].each { |f| puts f;  require(f) }
+end
 
 DB = ROM.finalize.env

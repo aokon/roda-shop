@@ -1,4 +1,4 @@
-class Blogs < ROM::Relation[:sql]
+class Products < ROM::Relation[:sql]
   def all
     order(:id)
   end

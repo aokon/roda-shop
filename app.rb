@@ -1,8 +1,9 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'roda'
 require 'rom'
 require 'rom/sql'
-require 'roda'
+require 'virtus'
 
 require './config/app'
 require './config/db'
