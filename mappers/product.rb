@@ -1,6 +1,5 @@
 class ProductMapper < ROM::Mapper
   relation :products
-  register_as :entities
 
   model Product
 
