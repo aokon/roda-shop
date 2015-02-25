@@ -1,5 +1,11 @@
 setup = ROM.setup(:sql, "sqlite::memory")
 
+setup.default.connection.create_table(:categories) do
+  primary_key :id
+  String :name
+  Boolean :active
+end
+
 setup.default.connection.create_table(:products) do
   primary_key :id
   String :name

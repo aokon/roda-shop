@@ -1,19 +1,22 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'roda'
+require 'roda/rest_api'
+require 'json'
 require 'rom'
 require 'rom/sql'
 require 'virtus'
+require 'oj'
+require 'multi_json'
 
 require './config/app'
 require './config/db'
+require './db/seed'
+
+require './api/v1'
 
 class RodaShopApp < Roda
-  plugin :render
-
   route do |r|
-    r.root do
-      render :index, locals: { title: 'title' }
-    end
+    r.run API::V1
   end
 end
