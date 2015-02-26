@@ -6,8 +6,6 @@ require 'json'
 require 'rom'
 require 'rom/sql'
 require 'virtus'
-require 'oj'
-require 'multi_json'
 
 require './config/app'
 require './config/db'

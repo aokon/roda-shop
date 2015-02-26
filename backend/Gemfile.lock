@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rom-rb/rom-sql.git
-  revision: 86800b5635c092fb102d95b046f42c7d4f2097c5
+  revision: 35f9f9c2a42eb52c639819a4ab83acc48a3f6061
   specs:
     rom-sql (0.3.2)
       equalizer (~> 0.0, >= 0.0.9)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom.git
-  revision: 9114bc77179ae1af5035d6828de9b99a9cdecda6
+  revision: 2964177add1f8705d0e0cbdb88c38620700cf4a0
   specs:
     rom (0.6.0)
       equalizer (~> 0.0, >= 0.0.9)
@@ -38,8 +38,6 @@ GEM
     ice_nine (0.11.1)
     json (1.8.2)
     minitest (5.5.1)
-    multi_json (1.10.1)
-    oj (2.11.2)
     puma (2.11.0)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
@@ -81,8 +79,6 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  multi_json
-  oj
   puma
   roda
   roda-rest_api
