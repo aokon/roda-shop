@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'roda'
 gem 'roda-rest_api'
 gem 'slim'
-gem 'puma'
+gem 'thin' #ember proxy has problem with puma, since puma bind into tcp:// :(
 gem 'activesupport'
 gem 'sqlite3'
 gem 'rom', github: 'rom-rb/rom'
