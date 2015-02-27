@@ -8,7 +8,7 @@ module API
         r.version 1 do
           r.resource :categories do |categories|
             categories.list do
-              DB.relation(:categories).all.to_a
+              { categories: DB.relation(:categories).all.to_a }
             end
           end
         end
