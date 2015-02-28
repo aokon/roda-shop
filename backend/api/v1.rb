@@ -8,6 +8,7 @@ module API
         r.version 1 do
           r.resource :categories do |categories|
             categories.list do
+              #TODO find better way for json serialization
               { categories: DB.relation(:categories).all.to_a }
             end
           end
