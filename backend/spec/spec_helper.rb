@@ -1,9 +1,10 @@
 ENV['RACK_ENV'] ||= 'test'
 
 require 'rack/test'
-require './app'
+require_relative '../app'
 
-Dir[File.join(ROOT_PATH, 'spec', 'support', '**', '*.rb')].each { |f| require(f) }
+paths = File.join(ROOT_PATH, 'spec', 'support', '**', '*.rb')
+Dir[paths].each { |file| require file }
 
 module AppSetup
   def self.included(base)
@@ -13,7 +14,7 @@ module AppSetup
   end
 
   def app
-    RodaShopApp
+    SpringDown::App
   end
 end
 

@@ -11,10 +11,12 @@ require './config/app'
 require './config/db'
 require './db/seed'
 
-require './api/v1'
+require './apps/spring_down/api/v1'
 
-class RodaShopApp < Roda
-  route do |r|
-    r.run API::V1
+module SpringDown
+  class App < Roda
+    route do |r|
+      r.run SpingDown::API::V1
+    end
   end
 end

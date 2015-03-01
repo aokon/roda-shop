@@ -1,3 +1,3 @@
 require './app'
 
-run RodaShopApp.freeze.app
+run SpringDown::App.freeze.app
