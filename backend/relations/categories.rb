@@ -6,4 +6,8 @@ class Categories < ROM::Relation[:sql]
   def find_by_id(id)
     where(id: id)
   end
+
+  def active
+    where(active: true)
+  end
 end

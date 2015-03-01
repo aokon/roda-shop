@@ -7,12 +7,16 @@ gem 'roda-rest_api'
 gem 'slim'
 gem 'thin' #ember proxy has problem with puma, since puma bind into tcp:// :(
 gem 'activesupport'
-gem 'sqlite3'
 gem 'rom', github: 'rom-rb/rom'
 gem 'rom-sql', github: 'rom-rb/rom-sql'
 gem 'virtus'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec'
   gem 'rack-test'
 end

@@ -8,7 +8,7 @@ require 'rom/sql'
 require 'virtus'
 
 require './config/app'
-require './config/db'
+require './db/db'
 require './db/seed'
 
 require './apps/spring_down/api/v1'

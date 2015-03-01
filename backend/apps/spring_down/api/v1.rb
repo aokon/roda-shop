@@ -9,13 +9,13 @@ module SpingDown
           r.version 1 do
             r.resource :categories do |categories|
               categories.list do
-                { categories: DB.relation(:categories).all.to_a }
+                categories = DB.rom.relation(:categories).active.all
+                { categories: categories.to_a }
               end
             end
           end
         end
       end
     end
-
   end
 end

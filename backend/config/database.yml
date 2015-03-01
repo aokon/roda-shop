@@ -1,0 +1,14 @@
+default: &default
+  :adapter: sqlite
+  :encoding: unicode
+  :pool: 5
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  :adapter: postgres
+  :url: postgres://sping_down:<%= ENV['SPRING_DOWN_DATABASE_PASSWORD'] %>@localhost:5432/sping_down_production
