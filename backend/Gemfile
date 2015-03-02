@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 
 gem 'roda'
 gem 'roda-rest_api'
-gem 'slim'
 gem 'thin' #ember proxy has problem with puma, since puma bind into tcp:// :(
 gem 'activesupport'
 gem 'rom', github: 'rom-rb/rom'
