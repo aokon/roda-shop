@@ -53,8 +53,9 @@ module DB
   end
 
   def load_files
-    %w(relations models mappers commands).each do |item|
-      Dir[File.join(ROOT_PATH, 'db', item, '**', '*.rb')].each { |f| require(f) }
+    %w(relations models presenters mappers commands).each do |item|
+      Dir[File.join(ROOT_PATH, 'db', item, '**', '*.rb')].sort.
+        each { |file| require file }
     end
   end
 end

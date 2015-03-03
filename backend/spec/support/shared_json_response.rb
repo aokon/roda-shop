@@ -3,7 +3,7 @@ RSpec.shared_examples 'a valid json response' do
     expect(last_response.status).to eq(200)
   end
 
-  it 'returns valid format' do
+  it 'returns valid content-type' do
     content_type = last_response.header['Content-Type']
     expect(content_type).to eq('application/json')
   end
