@@ -54,7 +54,7 @@ module DB
 
   def load_files
     %w(relations models mappers commands).each do |item|
-      Dir[File.join(ROOT_PATH, item, '**', '*.rb')].each { |f| require(f) }
+      Dir[File.join(ROOT_PATH, 'db', item, '**', '*.rb')].each { |f| require(f) }
     end
   end
 end
