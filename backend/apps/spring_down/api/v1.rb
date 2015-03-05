@@ -12,6 +12,12 @@ module SpingDown
                 categories = DB.rom.relation(:categories).active.all
                 { categories: categories.to_a }
               end
+
+              categories.one do |params|
+                category = DB.rom.relation(:categories).
+                  find_by_id(params[:id]).active.one!
+                { category: category }
+              end
             end
           end
         end
