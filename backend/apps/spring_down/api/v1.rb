@@ -9,33 +9,30 @@ module SpingDown
           r.version 1 do
             r.resource :categories do |categories|
               categories.list do
-                results = DB.rom.relation(:categories).active.all
-                { categories: results.to_a }
+                results = DB.rom.relation(:categories).
+                  active.all.to_a
+
+                { categories: results }
               end
 
               r.resource :products, parent_key: :category_id do |products|
-                def product_attributes(data)
-                  {
-                    name: data[:products_name],
-                    description: data[:description],
-                    price: data[:price],
-                    active: data[:products_active]
-                  }
-                end
-
                 products.list do |params|
-                  products = DB.rom.relation(:categories).
-                    with_category_products(params[:category_id]).
-                    map_with(:products, :product_presenter).to_a
-                    #to_a.map { |row| product_attributes(row) }
+                  category = DB.rom.relation(:categories).
+                    find_by_id(params[:category_id]).
+                    active.
+                    with_products.
+                    map_with(:category_with_products).
+                    one!
 
-                  { products: products }
+                  { products: category[:products] }
                 end
               end
 
               categories.one do |params|
                 category = DB.rom.relation(:categories).
-                  find_by_id(params[:id]).active.one!
+                  find_by_id(params[:id]).
+                  active.one!
+
                 { category: category }
               end
             end
