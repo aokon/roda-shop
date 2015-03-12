@@ -1,7 +1,7 @@
 RSpec.describe 'api/v1/products', type: :integration do
   describe 'GET list' do
     let(:product_attributes_names) {
-      [:products_id, :products_name, :description, :products_active, :price]
+      [:id, :name, :description, :active, :price]
     }
     before { do_get }
 
