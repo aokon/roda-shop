@@ -8,6 +8,7 @@ module SpingDown
         r.api do
           r.version 1 do
             r.resource :categories do |categories|
+
               categories.list do
                 results = DB.rom.relation(:categories).
                   active.all.to_a
