@@ -1,0 +1,16 @@
+<section class="category-index">
+  <div class="page-header">
+    <ol class="breadcrumb">
+      <li>{{#link-to "index"}}Home{{/link-to}}</li>
+      <li class="active">{{model.name}}</li>
+    </ol>
+  </div>
+
+  {{#each product in model.products}}
+    <div class="category-index__product">
+      <h1>{{product.name}}</h1>
+      <p>{{product.description}}</p>
+      <span>{{product.price}}</span>
+    </div>
+  {{/each}}
+</section>
