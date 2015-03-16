@@ -1,4 +1,4 @@
-RSpec.describe 'api/v1/products', type: :integration do
+RSpec.describe 'api/v1/categories/:id/products', type: :integration do
   describe 'GET list' do
     let(:product_attributes_names) {
       [:category_id, :id, :name, :description, :active, :price]

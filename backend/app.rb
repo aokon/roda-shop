@@ -7,16 +7,15 @@ require 'rom'
 require 'rom/sql'
 require 'virtus'
 
-require './config/app'
-require './db/db'
-require './db/seed'
-
-require './apps/spring_down/api/v1'
+require_relative 'config/app'
+require_relative 'db/db'
+require_relative 'db/seed'
+require_relative 'apps/spring_down/api/v1/app'
 
 module SpringDown
   class App < Roda
     route do |r|
-      r.run SpingDown::API::V1
+      r.run SpingDown::API::V1::App
     end
   end
 end
